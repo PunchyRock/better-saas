@@ -38,6 +38,8 @@ export default function SignInPage() {
       setError(error.message || "Failed to sign in");
       setLoading(false);
     } else {
+      // Sync user to Convex after successful sign-in
+      await fetch("/api/sync-user", { method: "POST" }).catch(console.error);
       router.push("/dashboard");
     }
   };

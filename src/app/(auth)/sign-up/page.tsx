@@ -40,6 +40,8 @@ export default function SignUpPage() {
       setError(error.message || "Failed to sign up");
       setLoading(false);
     } else {
+      // Sync user to Convex after successful sign-up
+      await fetch("/api/sync-user", { method: "POST" }).catch(console.error);
       router.push("/dashboard");
     }
   };

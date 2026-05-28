@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as authSync from "../authSync.js";
 import type * as notifications from "../notifications.js";
 import type * as subscriptions from "../subscriptions.js";
 import type * as users from "../users.js";
@@ -19,6 +20,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  authSync: typeof authSync;
   notifications: typeof notifications;
   subscriptions: typeof subscriptions;
   users: typeof users;
